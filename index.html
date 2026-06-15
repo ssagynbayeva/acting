@@ -3,35 +3,61 @@ layout: default
 title: Home
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url | absolute_url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<div style="max-width: 700px; margin: 0 auto; padding: 2rem 1.5rem; font-family: Georgia, serif;">
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+  <!-- NAME / HEADER -->
+  <h1 style="text-align: center; font-size: 2.5rem; margin-bottom: 0.25rem;">Your Name</h1>
+  <p style="text-align: center; color: #888; font-size: 1rem; margin-bottom: 3rem;">Actor · New York</p>
 
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
+  <!-- HEADSHOT -->
+  <section style="text-align: center; margin-bottom: 3rem;">
+    <img src="/public/headshot.jpg" alt="Headshot" style="width: 280px; height: 380px; object-fit: cover; border-radius: 4px;">
+  </section>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | absolute_url }}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ '/' | absolute_url }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ paginator.previous_page_path | absolute_url }}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
+  <!-- REEL -->
+  <section style="margin-bottom: 3rem;">
+    <h2 style="border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">Reel</h2>
+    <div style="position: relative; padding-top: 56.25%;">
+      <iframe
+        src="YOUR_VIMEO_OR_YOUTUBE_EMBED_URL"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section style="margin-bottom: 3rem;">
+    <h2 style="border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">Resume</h2>
+
+    <h3>Film</h3>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 1.5rem;">
+      <tr><th style="text-align:left;">Title</th><th style="text-align:left;">Role</th><th style="text-align:left;">Director</th></tr>
+      <tr><td>Film Title</td><td>Role Name</td><td>Director Name</td></tr>
+    </table>
+
+    <h3>Television</h3>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 1.5rem;">
+      <tr><th style="text-align:left;">Title</th><th style="text-align:left;">Role</th><th style="text-align:left;">Network</th></tr>
+      <tr><td>Show Title</td><td>Role Name</td><td>Network</td></tr>
+    </table>
+
+    <h3>Theater</h3>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 1.5rem;">
+      <tr><th style="text-align:left;">Production</th><th style="text-align:left;">Role</th><th style="text-align:left;">Theater</th></tr>
+      <tr><td>Play Title</td><td>Role Name</td><td>Theater Name</td></tr>
+    </table>
+
+    <h3>Training</h3>
+    <p>Studio/School — Teacher or Method — Year</p>
+
+    <h3>Skills</h3>
+    <p>e.g. Accents (British RP, Southern), Stage Combat, Piano, Improvisation</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section style="margin-bottom: 3rem; text-align: center; color: #888;">
+    <p>represented by / contact: <a href="mailto:you@email.com">you@email.com</a></p>
+  </section>
+
 </div>
